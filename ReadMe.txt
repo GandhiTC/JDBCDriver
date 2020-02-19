@@ -10,7 +10,8 @@ It has 4 primary purposes:
 
 Basic benefits:
 	- Dev    - If you absolutely must share existing DB credentials with a tester and you want to limit their permissions, 
-				you can modify JDBCDriverProxy.java to limit client-side permissions while maintaining your server-side permissions.
+				you can modify JDBCDriverProxy.java to limit client-side permissions 
+				while maintaining your server-side permissions.
 	- Tester - DatabaseConnectionBase.java acts as a base file that works specifically for a database connection.
 				This will replace the need to repeat the same DB-related code in each test file.
 
