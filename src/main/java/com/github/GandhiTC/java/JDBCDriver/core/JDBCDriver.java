@@ -36,7 +36,7 @@ enum JDBCDriver
 	
 	JDBCDriver(String propertiesFilePath)
 	{
-		Properties props = new Properties();
+		Properties 		props 		= new Properties();
 		FileInputStream fis;
 
 		try
@@ -154,6 +154,36 @@ enum JDBCDriver
 					prevQuery = sqlQuery;
 				}
 			}
+		}
+	}
+	
+	
+	boolean checkIfTableExists(String tableName)
+	{
+		try
+		{
+			String 		sqlQuery 	= 	"SELECT * " +
+										"FROM information_schema.tables " +
+										"WHERE table_schema = '" + database + "' " +
+										"AND table_name = '" + tableName + "' " +
+										"LIMIT 1;";
+			
+			ResultSet 	rs 			= 	query(sqlQuery);
+			
+			if (rs.next() == false)
+			{
+				return false;
+		    }
+			else
+			{
+				return true;
+			}
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+			
+			return false;
 		}
 	}
 	
