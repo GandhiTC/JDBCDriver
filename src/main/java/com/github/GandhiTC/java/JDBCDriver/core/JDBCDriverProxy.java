@@ -39,6 +39,12 @@ public enum JDBCDriverProxy
 	{
 		return db.query(sqlQuery);
 	}
+	
+	
+	public boolean checkIfTableExists(String tableName)
+	{
+		return db.checkIfTableExists(tableName);
+	}
 
 
 	public void parseSqlFile(String filePath, boolean autoCommitEachLine, boolean stopScriptRunnerOnError, boolean closeConnectionOnError, boolean exitOnError)
