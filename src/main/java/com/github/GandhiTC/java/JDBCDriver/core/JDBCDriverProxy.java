@@ -5,7 +5,6 @@ package com.github.GandhiTC.java.JDBCDriver.core;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
-import com.github.GandhiTC.java.JDBCDriver.core.JDBCDriver;
 
 
 

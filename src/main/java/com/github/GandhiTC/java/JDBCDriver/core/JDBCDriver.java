@@ -14,7 +14,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Properties;
-import com.github.GandhiTC.java.JDBCDriver.core.ScriptRunner;
 
 
 
