@@ -11,7 +11,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 
 /*
-	You can set up a free MySQL database at remotemysql.com
+	You can set up a free MySQL database at freemysqlhosting.net or remotemysql.com
  */
 
 
@@ -30,7 +30,7 @@ public class UseRetrievedData extends DatabaseConnectionBase
 		{
 			ResultSet resultSet = db.query("select * from offices where country ='USA'");
 			
-			if (resultSet.next() == false)
+			if(resultSet.next() == false)
 			{
 		        System.err.println("Database query returned no results");
 		    }
@@ -50,7 +50,7 @@ public class UseRetrievedData extends DatabaseConnectionBase
 					
 					Thread.sleep(2000);
 			    }
-				while (resultSet.next());
+				while(resultSet.next());
 			}
 		}
 		catch(InterruptedException | SQLException e)
