@@ -17,9 +17,9 @@ Basic benefits:
 
 
 
----------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------
 JDBCDriver.java
----------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------
 This file holds the actual code for interacting with a database/server.
 
 It is set-up as an enum so that it can be used as a true singleton.
@@ -28,9 +28,9 @@ It's access modifier is set to default (restricted to its package only), it is t
 
 
 
----------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------
 JDBCDriverProxy.java
----------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------
 This file acts as a public interface/proxy for the JDBCDriver enum.
 
 it is comprised of getter-type methods for the only JDBCDriver properties that you want to allow access to.
@@ -39,10 +39,11 @@ It also is an enum to be used as a true singleton.
 
 
 
----------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------
 DatabaseConnectionBase.java
----------------------------------------------------------------------------------------------------------------------------------------
-This class holds a static final instance of the JDBCDriverProxy interface/proxy, this instance is to be used by test/other files.
+-----------------------------------------------------------------------------------------------------------------------
+This class holds a static final instance of the JDBCDriverProxy interface/proxy, 
+this instance is to be used by test/other files.
 
 By default, this file resides in the same package as the test files (only to avoid having to import), 
 but it can be called on from anywhere.
@@ -51,39 +52,40 @@ Test classes can extend this class and then call the getter-type methods in JDBC
 
 
 
----------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------
 Run Sample Tests
----------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------
 To see examples in action
 	- Place a copy of chromedriver.exe file in the test resources directory:  ./src/test/resources/
 	- Create an account and a new database at remotemysql.com
 	- Update database credentials in properties file:  ./src/main/resources/database.properties
-	- In PopulateSampleData.java, make sure the negative test is commented out and the positive test is uncommented, 
+	- In PopulateSampleData.java, make sure negative test is commented out and positive test is uncommented, 
 		run this file as a java application
 	- Once database is populated with sample data, comment out the positive test and uncomment the negative test, 
 		and run the file again.
-	- Run UserRetrievedData.java as a java application to see info being pulled from the database then passed to Selenium 
+	- Run UserRetrievedData.java as a java application to see info being pulled from database & passed to Selenium 
 		to fill out a form.
 
 
 
----------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------
 Credits
----------------------------------------------------------------------------------------------------------------------------------------
-The ScriptRunner class file is an edited version of the original file from:  https://github.com/BenoitDuffez/ScriptRunner
+-----------------------------------------------------------------------------------------------------------------------
+The ScriptRunner class file is an edited version of the original from:  https://github.com/BenoitDuffez/ScriptRunner
 
 
 
----------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------
 Additional Info
----------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------
 Download the version of ChromeDriver that corresponds with the version of Chrome Browser installed on your computer.
 	https://chromedriver.chromium.org/downloads
 
 Place the chromedriver.exe file in the test resources directory
 	./src/test/resources/
 
-Database connection info is retrieved from a local properties file, which is done only for the sake of providing an example.
+Database connection info is retrieved from a local properties file, 
+which is done only for the sake of providing an example.
 It is highly recommended to use a more secure method in real-world apps.
 
 
